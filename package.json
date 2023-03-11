@@ -1,0 +1,22 @@
+{
+  "name": "mind-games",
+  "version": "1.0.0",
+  "description": "\"Mind Games\" is a set of console games. For details read README.md",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mizkuzy/frontend-project-44.git"
+  },
+  "keywords": [
+    "console-game"
+  ],
+  "author": "Lucy Ru",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mizkuzy/frontend-project-44/issues"
+  },
+  "homepage": "https://github.com/mizkuzy/frontend-project-44#readme"
+}
