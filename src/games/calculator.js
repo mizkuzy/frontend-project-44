@@ -1,5 +1,5 @@
 import run from '../game.js';
-import { getRandomNumber } from '../helpers/index.js';
+import { getRandomInt } from '../helpers/index.js';
 
 const OPERANDS_NUMBER = 3;
 
@@ -27,7 +27,7 @@ function multiple(a, b) {
 }
 
 function getOperationFunction() {
-  const operationCode = Math.floor(Math.random() * OPERANDS_NUMBER);
+  const operationCode = getRandomInt(OPERANDS_NUMBER);
 
   switch (operationCode) {
     case 0: return sum;
@@ -41,8 +41,8 @@ function getOperationFunction() {
 export function getQuestion() {
   const operationFunction = getOperationFunction();
 
-  const operand1 = getRandomNumber();
-  const operand2 = getRandomNumber();
+  const operand1 = getRandomInt();
+  const operand2 = getRandomInt();
 
   answer = operationFunction(operand1, operand2);
 

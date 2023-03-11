@@ -1,5 +1,5 @@
 import run from '../game.js';
-import { getRandomNumber } from '../helpers/index.js';
+import { getRandomInt } from '../helpers/index.js';
 
 let answer;
 
@@ -16,8 +16,8 @@ function getGcd(a, b) {
 }
 
 export function getQuestion() {
-  const operand1 = getRandomNumber();
-  const operand2 = getRandomNumber();
+  const operand1 = getRandomInt();
+  const operand2 = getRandomInt();
 
   answer = getGcd(operand1, operand2);
 

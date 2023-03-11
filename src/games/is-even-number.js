@@ -1,4 +1,5 @@
 import run from '../game.js';
+import { getRandomInt } from '../helpers/index.js';
 
 let answer;
 
@@ -7,7 +8,7 @@ const IS_EVEN = 'yes';
 const NOT_IS_EVEN = 'no';
 
 export function getQuestion() {
-  const number = Math.floor(Math.random() * MAX_NUMBER);
+  const number = getRandomInt(MAX_NUMBER);
   answer = number % 2 === 0 ? IS_EVEN : NOT_IS_EVEN;
 
   return number;

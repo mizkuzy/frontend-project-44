@@ -1,5 +1,5 @@
 import run from '../game.js';
-import { getRandomNumber } from '../helpers/index.js';
+import { getRandomInt } from '../helpers/index.js';
 
 const MAX_RANDOM_NUMBER = 40;
 
@@ -31,7 +31,7 @@ export function getAnswer() {
 }
 
 export function getQuestion() {
-  const number = getRandomNumber(MAX_RANDOM_NUMBER);
+  const number = getRandomInt(MAX_RANDOM_NUMBER);
 
   answer = isPrime(number);
 

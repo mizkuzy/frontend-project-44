@@ -1,4 +1,5 @@
 import run from '../game.js';
+import { getRandomInt } from '../helpers/index.js';
 
 const SEQUENCE_ELEMENTS_NUMBER = 10;
 const MAX_DIFFERENCE_VALUE = 10;
@@ -7,8 +8,8 @@ const MAX_SEQUENCE_ITEM_VALUE = 1000;
 let answer;
 
 function generateSequenceElements() {
-  const difference = Math.ceil(Math.random() * MAX_DIFFERENCE_VALUE);
-  const firstElement = Math.floor(Math.random() * MAX_SEQUENCE_ITEM_VALUE);
+  const difference = getRandomInt(MAX_DIFFERENCE_VALUE) + 1;
+  const firstElement = getRandomInt(MAX_SEQUENCE_ITEM_VALUE);
   const sequenceElements = [firstElement];
 
   for (let i = 1; i < SEQUENCE_ELEMENTS_NUMBER; i += 1) {
@@ -34,7 +35,7 @@ function getQuestionDescription(list, hideElementIndex) {
 
 export function getQuestion() {
   const sequenceElements = generateSequenceElements();
-  const missedElementIndex = Math.floor(Math.random() * SEQUENCE_ELEMENTS_NUMBER);
+  const missedElementIndex = getRandomInt(SEQUENCE_ELEMENTS_NUMBER);
 
   answer = sequenceElements[missedElementIndex];
 
