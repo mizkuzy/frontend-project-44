@@ -1,5 +1,6 @@
-const DEFAULT_MAX_OPERAND_NUMBER = 10;
+const DEFAULT_MAX_NUMBER = 10;
 
-export function getOperand(maxOperandNumber = DEFAULT_MAX_OPERAND_NUMBER) {
-  return Math.ceil(Math.random() * maxOperandNumber);
+// eslint-disable-next-line import/prefer-default-export
+export function getRandomNumber(maxValue = DEFAULT_MAX_NUMBER) {
+  return Math.ceil(Math.random() * maxValue);
 }

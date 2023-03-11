@@ -1,5 +1,5 @@
 import run from '../game.js';
-import { getOperand } from '../helpers/index.js';
+import { getRandomNumber } from '../helpers/index.js';
 
 const OPERANDS_NUMBER = 3;
 
@@ -41,8 +41,8 @@ function getOperationFunction() {
 export function getQuestion() {
   const operationFunction = getOperationFunction();
 
-  const operand1 = getOperand();
-  const operand2 = getOperand();
+  const operand1 = getRandomNumber();
+  const operand2 = getRandomNumber();
 
   answer = operationFunction(operand1, operand2);
 
