@@ -7,3 +7,6 @@
 Determine Even Number Game
 
 [![asciicast](https://asciinema.org/a/566561.svg)](https://asciinema.org/a/566561)
+
+Calculate an Expression Game
+[![asciicast](https://asciinema.org/a/PGPE4EhkVlwyEg91nu8YLajMH.svg)](https://asciinema.org/a/PGPE4EhkVlwyEg91nu8YLajMH)
