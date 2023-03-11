@@ -9,7 +9,7 @@ export function printIt(input) {
 }
 
 export function welcomeUser() {
-  printIt('Welcome to the Brain Game!');
+  printIt('Welcome to the Brain Games!');
 
   userName = readlineSync.question('May I have your name? ');
 
