@@ -2,13 +2,12 @@ import run from '../game.js';
 import { getRandomInt } from '../helpers/index.js';
 
 const SEQUENCE_ELEMENTS_NUMBER = 10;
-const MAX_DIFFERENCE_VALUE = 10;
 const MAX_SEQUENCE_ITEM_VALUE = 1000;
 
 let answer;
 
 function generateSequenceElements() {
-  const difference = getRandomInt(MAX_DIFFERENCE_VALUE) + 1;
+  const difference = getRandomInt() + 1;
   const firstElement = getRandomInt(MAX_SEQUENCE_ITEM_VALUE);
   const sequenceElements = [firstElement];
 
