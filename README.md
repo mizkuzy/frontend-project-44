@@ -10,3 +10,6 @@ Determine Even Number Game
 
 Calculate an Expression Game
 [![asciicast](https://asciinema.org/a/PGPE4EhkVlwyEg91nu8YLajMH.svg)](https://asciinema.org/a/PGPE4EhkVlwyEg91nu8YLajMH)
+
+The Greatest Common Divisor game
+[![asciicast](https://asciinema.org/a/BQL2UcpFEvL9iEiMBOPE2bDru.svg)](https://asciinema.org/a/BQL2UcpFEvL9iEiMBOPE2bDru)

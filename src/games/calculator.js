@@ -1,6 +1,6 @@
 import run from '../game.js';
+import { getOperand } from '../helpers/index.js';
 
-const MAX_OPERAND_NUMBER = 10;
 const OPERANDS_NUMBER = 3;
 
 let answer;
@@ -36,10 +36,6 @@ function getOperationFunction() {
     default:
       throw new Error(`Unexpected Operation code ${operationCode}`);
   }
-}
-
-function getOperand() {
-  return Math.ceil(Math.random() * MAX_OPERAND_NUMBER);
 }
 
 export function getQuestion() {

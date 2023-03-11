@@ -1,6 +1,7 @@
 import { welcomeUser as greetUser } from './game.js';
 import runEvenNumberGame from './games/is-even-number.js';
 import runCalculatorGame from './games/calculator.js';
+import runGcdGame from './games/gcd.js';
 
 export function welcomeUser() {
   return greetUser();
@@ -12,4 +13,8 @@ export function startEvenNumberGame() {
 
 export function startCalculatorGame() {
   runCalculatorGame();
+}
+
+export function startGcdGame() {
+  runGcdGame();
 }
