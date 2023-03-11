@@ -1,13 +1,10 @@
-import readlineSync from 'readline-sync';
+import { welcomeUser as greetUser } from './game.js';
+import runEvenNumberGame from './games/is-even-number.js';
 
-export function printIt(input) {
-  console.log(input);
+export function welcomeUser() {
+  return greetUser();
 }
 
-export default function run() {
-  printIt('Welcome to the Brain Game!');
-
-  const userName = readlineSync.question('May I have your name? ');
-
-  printIt(`Hello, ${userName}`);
+export function startEvenNumberGame() {
+  runEvenNumberGame();
 }

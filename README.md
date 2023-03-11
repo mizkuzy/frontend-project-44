@@ -2,3 +2,8 @@
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/mizkuzy/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/mizkuzy/frontend-project-44/actions)
+
+### Screencasts
+Determine Even Number Game
+
+[![asciicast](https://asciinema.org/a/566561.svg)](https://asciinema.org/a/566561)
