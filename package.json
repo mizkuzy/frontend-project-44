@@ -1,8 +1,11 @@
 {
-  "name": "mind-games",
+  "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "\"Mind Games\" is a set of console games. For details read README.md",
   "main": "index.js",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
