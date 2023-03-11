@@ -13,7 +13,7 @@ export function welcomeUser() {
 
   userName = readlineSync.question('May I have your name? ');
 
-  printIt(`Hello, ${userName}`);
+  printIt(`Hello, ${userName}!`);
 }
 
 export default function run(gameDescription, getQuestion, getCorrectAnswer) {
