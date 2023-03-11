@@ -16,8 +16,9 @@ function getGcd(a, b) {
 }
 
 export function getQuestion() {
-  const operand1 = getRandomInt();
-  const operand2 = getRandomInt();
+  //  we don't consider zero value for GCD
+  const operand1 = getRandomInt() + 1;
+  const operand2 = getRandomInt() + 1;
 
   answer = getGcd(operand1, operand2);
 
