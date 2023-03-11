@@ -13,3 +13,5 @@ Calculate an Expression Game
 
 The Greatest Common Divisor game
 [![asciicast](https://asciinema.org/a/BQL2UcpFEvL9iEiMBOPE2bDru.svg)](https://asciinema.org/a/BQL2UcpFEvL9iEiMBOPE2bDru)
+
+[![asciicast](https://asciinema.org/a/OtyxRJ4CDsZdJ6S2ldcG7O1Xj.svg)](https://asciinema.org/a/OtyxRJ4CDsZdJ6S2ldcG7O1Xj)
