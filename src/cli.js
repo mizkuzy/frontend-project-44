@@ -1,6 +1,5 @@
 import readlineSync from 'readline-sync';
 
-
 export function printIt(input) {
   console.log(input);
 }
