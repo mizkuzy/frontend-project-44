@@ -23,7 +23,7 @@ function getQuestionDescription(list, hideElementIndex) {
 
   for (let i = 0; i < list.length; i += 1) {
     if (i === hideElementIndex) {
-      result[i] = '__';
+      result[i] = '..';
     } else {
       result[i] = list[i];
     }
