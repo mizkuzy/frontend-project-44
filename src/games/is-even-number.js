@@ -22,7 +22,7 @@ export function getCorrectAnswer() {
 }
 
 export default function startEvenNumberGame() {
-  const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no"';
+  const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 
   run(gameDescription, getQuestion, getCorrectAnswer);
 }
