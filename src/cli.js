@@ -1,30 +1,9 @@
-import { welcomeUser as greetUser } from './game.js';
-import runEvenNumberGame from './games/is-even-number.js';
-import runCalculatorGame from './games/calculator.js';
-import runGcdGame from './games/gcd.js';
-import runProgressionGame from './games/progression.js';
-import runPrimeNumberGame from './games/is-prime-number.js';
+import readlineSync from 'readline-sync';
 
-export function welcomeUser() {
-  return greetUser();
-}
+export default function run() {
+  console.log('Welcome to the Brain Games!');
 
-export function startEvenNumberGame() {
-  runEvenNumberGame();
-}
+  const userName = readlineSync.question('May I have your name? ');
 
-export function startCalculatorGame() {
-  runCalculatorGame();
-}
-
-export function startGcdGame() {
-  runGcdGame();
-}
-
-export function startProgressionGame() {
-  runProgressionGame();
-}
-
-export function startPrimeNumberGame() {
-  runPrimeNumberGame();
+  console.log(`Hello, ${userName}`);
 }

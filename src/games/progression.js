@@ -35,8 +35,8 @@ export function getQuestion() {
   const firstElement = getRandomInt(MAX_SEQUENCE_ITEM_VALUE);
 
   const sequenceElements = generateSequenceElements(
-    difference,
     firstElement,
+    difference,
     SEQUENCE_ELEMENTS_NUMBER,
   );
 

@@ -8,17 +8,20 @@ export function printIt(input) {
   console.log(input);
 }
 
-export function welcomeUser() {
+function welcomeUser() {
   printIt('Welcome to the Brain Games!');
 
-  userName = readlineSync.question('May I have your name? ');
-
   printIt(`Hello, ${userName}!`);
+}
+
+function getUsername() {
+  userName = readlineSync.question('May I have your name? ');
 }
 
 export default function run(gameDescription, getQuestion, getCorrectAnswer) {
   let winsCount = 0;
 
+  getUsername();
   welcomeUser();
 
   printIt(gameDescription);

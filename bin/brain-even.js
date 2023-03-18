@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { startEvenNumberGame } from '../src/cli.js';
+import run from '../src/games/is-even-number.js';
 
-startEvenNumberGame();
+run();
