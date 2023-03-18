@@ -53,12 +53,8 @@ export function getCorrectAnswer() {
   return answer.toString();
 }
 
-export function getGameName() {
-  return 'What is the result of the expression?';
-}
-
 export default function startCalculatorGame() {
-  const gameDescription = getGameName();
+  const gameDescription = 'What is the result of the expression?';
 
   run(gameDescription, getQuestion, getCorrectAnswer);
 }

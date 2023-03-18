@@ -29,12 +29,8 @@ export function getCorrectAnswer() {
   return answer.toString();
 }
 
-export function getGameName() {
-  return 'Find the greatest common divisor of given numbers';
-}
-
 export default function startGcdGame() {
-  const gameDescription = getGameName();
+  const gameDescription = 'Find the greatest common divisor of given numbers';
 
   run(gameDescription, getQuestion, getCorrectAnswer);
 }

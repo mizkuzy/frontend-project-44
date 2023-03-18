@@ -3,27 +3,24 @@ import { getRandomInt } from '../helpers/index.js';
 
 const MAX_RANDOM_NUMBER = 40;
 
-const IS_PRIME = 'yes';
-const IS_NOT_PRIME = 'no';
-
 let answer;
 
 function isPrime(number) {
   if (number === 1) {
-    return IS_NOT_PRIME;
+    return false;
   }
 
   if (number === 2) {
-    return IS_PRIME;
+    return true;
   }
 
   for (let divider = 2; divider < number; divider += 1) {
     if (number % divider === 0) {
-      return IS_NOT_PRIME;
+      return false;
     }
   }
 
-  return IS_PRIME;
+  return true;
 }
 
 export function getAnswer() {
@@ -33,17 +30,13 @@ export function getAnswer() {
 export function getQuestion() {
   const number = getRandomInt(MAX_RANDOM_NUMBER);
 
-  answer = isPrime(number);
+  answer = isPrime(number) ? 'yes' : 'no';
 
   return number;
 }
 
-export function getGameName() {
-  return 'Answer "yes" if given number is prime. Otherwise answer "no"';
-}
-
 export default function startPrimeNumberGame() {
-  const gameDescription = getGameName();
+  const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
   run(gameDescription, getQuestion, getAnswer);
 }

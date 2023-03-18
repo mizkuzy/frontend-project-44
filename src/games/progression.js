@@ -6,13 +6,11 @@ const MAX_SEQUENCE_ITEM_VALUE = 1000;
 
 let answer;
 
-function generateSequenceElements() {
-  const difference = getRandomInt() + 1;
-  const firstElement = getRandomInt(MAX_SEQUENCE_ITEM_VALUE);
+function generateSequenceElements(firstElement, step, sequenceElementsNumber) {
   const sequenceElements = [firstElement];
 
-  for (let i = 1; i < SEQUENCE_ELEMENTS_NUMBER; i += 1) {
-    sequenceElements[i] = sequenceElements[i - 1] + difference;
+  for (let i = 1; i < sequenceElementsNumber; i += 1) {
+    sequenceElements[i] = sequenceElements[i - 1] + step;
   }
 
   return sequenceElements;
@@ -33,7 +31,15 @@ function getQuestionDescription(list, hideElementIndex) {
 }
 
 export function getQuestion() {
-  const sequenceElements = generateSequenceElements();
+  const difference = getRandomInt() + 1;
+  const firstElement = getRandomInt(MAX_SEQUENCE_ITEM_VALUE);
+
+  const sequenceElements = generateSequenceElements(
+    difference,
+    firstElement,
+    SEQUENCE_ELEMENTS_NUMBER,
+  );
+
   const missedElementIndex = getRandomInt(SEQUENCE_ELEMENTS_NUMBER);
 
   answer = sequenceElements[missedElementIndex];
@@ -45,12 +51,8 @@ export function getCorrectAnswer() {
   return answer.toString();
 }
 
-export function getGameName() {
-  return 'What number is missing in the progression?';
-}
-
 export default function startProgressionGame() {
-  const gameDescription = getGameName();
+  const gameDescription = 'What number is missing in the progression?';
 
   run(gameDescription, getQuestion, getCorrectAnswer);
 }
