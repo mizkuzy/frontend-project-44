@@ -1,28 +1,28 @@
 import run from '../game.js';
 import { getRandomInt } from '../helpers/index.js';
 
+const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
+
 let answer;
 
 const MAX_NUMBER = 1000;
 
-function isEven(number) {
-  return number % 2 === 0;
-}
+const isEven = (number) => number % 2 === 0;
 
-export function getQuestion() {
+const generateQuestion = () => {
   const number = getRandomInt(MAX_NUMBER);
 
   answer = isEven(number) ? 'yes' : 'no';
 
   return number;
-}
+};
 
-export function getCorrectAnswer() {
-  return answer;
-}
+const generateGameData = () => {
+  const question = generateQuestion();
 
-export default function startEvenNumberGame() {
-  const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
+  return [question, answer];
+};
 
-  run(gameDescription, getQuestion, getCorrectAnswer);
-}
+export default () => {
+  run(gameDescription, generateGameData);
+};

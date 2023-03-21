@@ -1,12 +1,14 @@
 import run from '../game.js';
 import { getRandomInt } from '../helpers/index.js';
 
+const gameDescription = 'What number is missing in the progression?';
+
 const SEQUENCE_ELEMENTS_NUMBER = 10;
 const MAX_SEQUENCE_ITEM_VALUE = 1000;
 
 let answer;
 
-function generateSequenceElements(firstElement, step, sequenceElementsNumber) {
+const generateSequenceElements = (firstElement, step, sequenceElementsNumber) => {
   const sequenceElements = [firstElement];
 
   for (let i = 1; i < sequenceElementsNumber; i += 1) {
@@ -14,9 +16,9 @@ function generateSequenceElements(firstElement, step, sequenceElementsNumber) {
   }
 
   return sequenceElements;
-}
+};
 
-function getQuestionDescription(list, hideElementIndex) {
+const getQuestionDescription = (list, hideElementIndex) => {
   const result = [];
 
   for (let i = 0; i < list.length; i += 1) {
@@ -28,9 +30,9 @@ function getQuestionDescription(list, hideElementIndex) {
   }
 
   return result.join(' ');
-}
+};
 
-export function getQuestion() {
+const generateQuestion = () => {
   const difference = getRandomInt() + 1;
   const firstElement = getRandomInt(MAX_SEQUENCE_ITEM_VALUE);
 
@@ -45,14 +47,14 @@ export function getQuestion() {
   answer = sequenceElements[missedElementIndex];
 
   return getQuestionDescription(sequenceElements, missedElementIndex);
-}
+};
 
-export function getCorrectAnswer() {
-  return answer.toString();
-}
+const generateGameData = () => {
+  const question = generateQuestion();
 
-export default function startProgressionGame() {
-  const gameDescription = 'What number is missing in the progression?';
+  return [question, answer.toString()];
+};
 
-  run(gameDescription, getQuestion, getCorrectAnswer);
-}
+export default () => {
+  run(gameDescription, generateGameData);
+};

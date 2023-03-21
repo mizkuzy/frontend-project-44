@@ -4,21 +4,21 @@ const REQUIRED_WINS_NUMBER = 3;
 
 let userName;
 
-export function printIt(input) {
+const printIt = (input) => {
   console.log(input);
-}
+};
 
-function welcomeUser() {
+const welcomeUser = () => {
   printIt('Welcome to the Brain Games!');
 
   printIt(`Hello, ${userName}!`);
-}
+};
 
-function getUsername() {
+const getUsername = () => {
   userName = readlineSync.question('May I have your name? ');
-}
+};
 
-export default function run(gameDescription, getQuestion, getCorrectAnswer) {
+export default (gameDescription, generateGameData) => {
   let winsCount = 0;
 
   getUsername();
@@ -27,13 +27,14 @@ export default function run(gameDescription, getQuestion, getCorrectAnswer) {
   printIt(gameDescription);
 
   while (winsCount < REQUIRED_WINS_NUMBER) {
-    printIt(`Question: ${getQuestion()}`);
+    const [question, correctAnswer] = generateGameData();
 
-    const answer = readlineSync.question('Your answer: ');
-    const correctAnswer = getCorrectAnswer();
+    printIt(`Question: ${question}`);
 
-    if (correctAnswer !== answer) {
-      printIt(`${answer} is wrong answer ;(. Correct answer is ${correctAnswer}.`);
+    const userAnswer = readlineSync.question('Your answer: ');
+
+    if (correctAnswer !== userAnswer) {
+      printIt(`${userAnswer} is wrong answer ;(. Correct answer is ${correctAnswer}.`);
       printIt(`Let's try again, ${userName}!`);
       break;
     }
@@ -44,4 +45,4 @@ export default function run(gameDescription, getQuestion, getCorrectAnswer) {
   if (winsCount === REQUIRED_WINS_NUMBER) {
     printIt(`Congratulations, ${userName}!`);
   }
-}
+};
