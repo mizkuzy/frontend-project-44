@@ -3,56 +3,41 @@ import { getRandomInt } from '../helpers/index.js';
 
 const gameDescription = 'What is the result of the expression?';
 
-const OPERANDS_NUMBER = 3;
+const OPERANDS = ['+', '-', '*'];
 
-let answer;
-let questionDescription;
+const sum = (a, b) => a + b;
 
-const saveQuestionDescription = (operator, operand1, operand2) => {
-  questionDescription = `${operand1} ${operator} ${operand2}`;
-};
+const subtract = (a, b) => a - b;
 
-const sum = (a, b) => {
-  saveQuestionDescription('+', a, b);
+const multiple = (a, b) => a * b;
 
-  return a + b;
-};
-
-const subtract = (a, b) => {
-  saveQuestionDescription('-', a, b);
-  return a - b;
-};
-
-const multiple = (a, b) => {
-  saveQuestionDescription('*', a, b);
-  return a * b;
-};
-
-const getOperationFunction = () => {
-  const operationCode = getRandomInt(OPERANDS_NUMBER);
-
-  switch (operationCode) {
-    case 0: return sum;
-    case 1: return subtract;
-    case 2: return multiple;
-    default:
-      throw new Error(`Unexpected Operation code ${operationCode}`);
+const calculate = (operator, operand1, operand2) => {
+  if (operator === '+') {
+    return sum(operand1, operand2);
   }
-};
 
-const generateQuestion = () => {
-  const operationFunction = getOperationFunction();
+  if (operator === '-') {
+    return subtract(operand1, operand2);
+  }
 
-  const operand1 = getRandomInt();
-  const operand2 = getRandomInt();
+  if (operator === '*') {
+    return multiple(operand1, operand2);
+  }
 
-  answer = operationFunction(operand1, operand2);
+  throw new Error(`Unexpected Operator ${operator}`);
 };
 
 const generateGameData = () => {
-  generateQuestion();
+  const operationCode = getRandomInt(OPERANDS.length);
+  const operand = OPERANDS[operationCode];
+  const operand1 = getRandomInt();
+  const operand2 = getRandomInt();
 
-  return [questionDescription, answer.toString()];
+  const question = `${operand1} ${operand} ${operand2}`;
+
+  const answer = calculate(operand, operand1, operand2);
+
+  return [question, answer.toString()];
 };
 
 export default () => {

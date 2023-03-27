@@ -6,8 +6,6 @@ const gameDescription = 'What number is missing in the progression?';
 const SEQUENCE_ELEMENTS_NUMBER = 10;
 const MAX_SEQUENCE_ITEM_VALUE = 1000;
 
-let answer;
-
 const generateSequenceElements = (firstElement, step, sequenceElementsNumber) => {
   const sequenceElements = [firstElement];
 
@@ -18,21 +16,7 @@ const generateSequenceElements = (firstElement, step, sequenceElementsNumber) =>
   return sequenceElements;
 };
 
-const getQuestionDescription = (list, hideElementIndex) => {
-  const result = [];
-
-  for (let i = 0; i < list.length; i += 1) {
-    if (i === hideElementIndex) {
-      result[i] = '..';
-    } else {
-      result[i] = list[i];
-    }
-  }
-
-  return result.join(' ');
-};
-
-const generateQuestion = () => {
+const generateGameData = () => {
   const difference = getRandomInt() + 1;
   const firstElement = getRandomInt(MAX_SEQUENCE_ITEM_VALUE);
 
@@ -44,15 +28,11 @@ const generateQuestion = () => {
 
   const missedElementIndex = getRandomInt(SEQUENCE_ELEMENTS_NUMBER);
 
-  answer = sequenceElements[missedElementIndex];
+  const answer = sequenceElements[missedElementIndex];
 
-  return getQuestionDescription(sequenceElements, missedElementIndex);
-};
+  sequenceElements[missedElementIndex] = '..';
 
-const generateGameData = () => {
-  const question = generateQuestion();
-
-  return [question, answer.toString()];
+  return [sequenceElements, answer.toString()];
 };
 
 export default () => {

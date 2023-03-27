@@ -5,8 +5,6 @@ const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer
 
 const MAX_RANDOM_NUMBER = 40;
 
-let answer;
-
 const isPrime = (number) => {
   if (number === 1) {
     return false;
@@ -25,16 +23,11 @@ const isPrime = (number) => {
   return true;
 };
 
-const generateQuestion = () => {
+const generateGameData = () => {
   const number = getRandomInt(MAX_RANDOM_NUMBER);
 
-  answer = isPrime(number) ? 'yes' : 'no';
-
-  return number;
-};
-
-const generateGameData = () => {
-  const question = generateQuestion();
+  const question = String(number);
+  const answer = isPrime(number) ? 'yes' : 'no';
 
   return [question, answer];
 };
