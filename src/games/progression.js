@@ -32,7 +32,7 @@ const generateGameData = () => {
 
   sequenceElements[missedElementIndex] = '..';
 
-  return [sequenceElements, answer.toString()];
+  return [sequenceElements.join(' '), answer.toString()];
 };
 
 export default () => {
