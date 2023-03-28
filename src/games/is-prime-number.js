@@ -14,7 +14,9 @@ const isPrime = (number) => {
     return true;
   }
 
-  for (let divider = 2; divider < number; divider += 1) {
+  const numberSqrt = Math.sqrt(number);
+
+  for (let divider = 2; divider <= numberSqrt; divider += 1) {
     if (number % divider === 0) {
       return false;
     }
