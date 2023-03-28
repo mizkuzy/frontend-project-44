@@ -6,7 +6,7 @@ const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer
 const MAX_RANDOM_NUMBER = 40;
 
 const isPrime = (number) => {
-  if (number === 1) {
+  if (number < 2) {
     return false;
   }
 
