@@ -1,4 +1,2 @@
-const DEFAULT_MAX_NUMBER = 10;
-
 // eslint-disable-next-line import/prefer-default-export
-export const getRandomInt = (maxValue = DEFAULT_MAX_NUMBER) => Math.floor(Math.random() * maxValue);
+export const getRandomInt = (minValue, maxValue) => Math.floor(Math.random() * maxValue) + minValue;

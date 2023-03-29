@@ -3,15 +3,9 @@ import { getRandomInt } from '../helpers/index.js';
 
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const MAX_RANDOM_NUMBER = 40;
-
 const isPrime = (number) => {
   if (number < 2) {
     return false;
-  }
-
-  if (number === 2) {
-    return true;
   }
 
   const numberSqrt = Math.sqrt(number);
@@ -26,7 +20,7 @@ const isPrime = (number) => {
 };
 
 const generateGameData = () => {
-  const number = getRandomInt(MAX_RANDOM_NUMBER);
+  const number = getRandomInt(0, 40);
 
   const question = String(number);
   const answer = isPrime(number) ? 'yes' : 'no';

@@ -12,32 +12,29 @@ const subtract = (a, b) => a - b;
 const multiple = (a, b) => a * b;
 
 const calculate = (operator, operand1, operand2) => {
-  if (operator === '+') {
-    return sum(operand1, operand2);
+  switch (operator) {
+    case '+':
+      return sum(operand1, operand2);
+    case '-':
+      return subtract(operand1, operand2);
+    case '*':
+      return multiple(operand1, operand2);
+    default:
+      throw new Error(`Unexpected Operator ${operator}`);
   }
-
-  if (operator === '-') {
-    return subtract(operand1, operand2);
-  }
-
-  if (operator === '*') {
-    return multiple(operand1, operand2);
-  }
-
-  throw new Error(`Unexpected Operator ${operator}`);
 };
 
 const generateGameData = () => {
-  const operationCode = getRandomInt(OPERANDS.length);
-  const operand = OPERANDS[operationCode];
-  const operand1 = getRandomInt();
-  const operand2 = getRandomInt();
+  const operationIndex = getRandomInt(0, OPERANDS.length);
+  const operand = OPERANDS[operationIndex];
+  const operand1 = getRandomInt(0, 10);
+  const operand2 = getRandomInt(0, 10);
 
   const question = `${operand1} ${operand} ${operand2}`;
 
-  const answer = calculate(operand, operand1, operand2);
+  const answer = calculate(operand, operand1, operand2).toString();
 
-  return [question, answer.toString()];
+  return [question, answer];
 };
 
 export default () => {

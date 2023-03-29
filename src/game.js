@@ -2,30 +2,26 @@ import readlineSync from 'readline-sync';
 
 const REQUIRED_WINS_NUMBER = 3;
 
-const printIt = (input) => {
-  console.log(input);
-};
-
 export default (gameDescription, generateGameData) => {
   let winsCount = 0;
 
   const userName = readlineSync.question('May I have your name? ');
 
-  printIt('Welcome to the Brain Games!');
-  printIt(`Hello, ${userName}!`);
+  console.log('Welcome to the Brain Games!');
+  console.log(`Hello, ${userName}!`);
 
-  printIt(gameDescription);
+  console.log(gameDescription);
 
   while (winsCount < REQUIRED_WINS_NUMBER) {
     const [question, correctAnswer] = generateGameData();
 
-    printIt(`Question: ${question}`);
+    console.log(`Question: ${question}`);
 
     const userAnswer = readlineSync.question('Your answer: ');
 
     if (correctAnswer !== userAnswer) {
-      printIt(`${userAnswer} is wrong answer ;(. Correct answer is ${correctAnswer}.`);
-      printIt(`Let's try again, ${userName}!`);
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer is ${correctAnswer}.`);
+      console.log(`Let's try again, ${userName}!`);
       break;
     }
 
@@ -33,6 +29,6 @@ export default (gameDescription, generateGameData) => {
   }
 
   if (winsCount === REQUIRED_WINS_NUMBER) {
-    printIt(`Congratulations, ${userName}!`);
+    console.log(`Congratulations, ${userName}!`);
   }
 };

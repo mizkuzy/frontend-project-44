@@ -3,8 +3,6 @@ import { getRandomInt } from '../helpers/index.js';
 
 const gameDescription = 'Find the greatest common divisor of given numbers';
 
-let answer;
-
 const getGcd = (a, b) => {
   let divisor;
 
@@ -17,20 +15,16 @@ const getGcd = (a, b) => {
   return divisor;
 };
 
-const generateQuestion = () => {
-  //  we don't consider zero value for GCD
-  const operand1 = getRandomInt() + 1;
-  const operand2 = getRandomInt() + 1;
-
-  answer = getGcd(operand1, operand2);
-
-  return `${operand1} ${operand2}`;
-};
-
 const generateGameData = () => {
-  const question = generateQuestion();
+  //  we don't consider zero value for GCD
+  const operand1 = getRandomInt(1, 10);
+  const operand2 = getRandomInt(1, 10);
 
-  return [question, answer.toString()];
+  const answer = getGcd(operand1, operand2).toString();
+
+  const question = `${operand1} ${operand2}`;
+
+  return [question, answer];
 };
 
 export default () => {

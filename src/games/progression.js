@@ -4,7 +4,6 @@ import { getRandomInt } from '../helpers/index.js';
 const gameDescription = 'What number is missing in the progression?';
 
 const SEQUENCE_ELEMENTS_NUMBER = 10;
-const MAX_SEQUENCE_ITEM_VALUE = 1000;
 
 const generateSequenceElements = (firstElement, step, sequenceElementsNumber) => {
   const sequenceElements = [firstElement];
@@ -17,8 +16,8 @@ const generateSequenceElements = (firstElement, step, sequenceElementsNumber) =>
 };
 
 const generateGameData = () => {
-  const difference = getRandomInt() + 1;
-  const firstElement = getRandomInt(MAX_SEQUENCE_ITEM_VALUE);
+  const difference = getRandomInt(1, 10);
+  const firstElement = getRandomInt(0, 1000);
 
   const sequenceElements = generateSequenceElements(
     firstElement,
@@ -26,13 +25,13 @@ const generateGameData = () => {
     SEQUENCE_ELEMENTS_NUMBER,
   );
 
-  const missedElementIndex = getRandomInt(SEQUENCE_ELEMENTS_NUMBER);
+  const missedElementIndex = getRandomInt(0, SEQUENCE_ELEMENTS_NUMBER);
 
-  const answer = sequenceElements[missedElementIndex];
+  const answer = sequenceElements[missedElementIndex].toString();
 
   sequenceElements[missedElementIndex] = '..';
 
-  return [sequenceElements.join(' '), answer.toString()];
+  return [sequenceElements.join(' '), answer];
 };
 
 export default () => {
