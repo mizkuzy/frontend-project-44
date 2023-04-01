@@ -10,7 +10,7 @@ const generateGameData = () => {
   const operand1 = getRandomInt(1, 10);
   const operand2 = getRandomInt(1, 10);
 
-  const answer = getGcd(operand1, operand2).toString();
+  const answer = String(getGcd(operand1, operand2));
 
   const question = `${operand1} ${operand2}`;
 

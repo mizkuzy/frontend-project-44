@@ -32,7 +32,7 @@ const generateGameData = () => {
 
   const question = `${operand1} ${operand} ${operand2}`;
 
-  const answer = calculate(operand, operand1, operand2).toString();
+  const answer = String(calculate(operand, operand1, operand2));
 
   return [question, answer];
 };

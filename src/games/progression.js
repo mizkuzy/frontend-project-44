@@ -27,7 +27,7 @@ const generateGameData = () => {
 
   const missedElementIndex = getRandomInt(0, SEQUENCE_ELEMENTS_NUMBER);
 
-  const answer = sequenceElements[missedElementIndex].toString();
+  const answer = String(sequenceElements[missedElementIndex]);
 
   sequenceElements[missedElementIndex] = '..';
 
