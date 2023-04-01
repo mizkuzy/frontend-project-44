@@ -5,9 +5,10 @@ const REQUIRED_WINS_NUMBER = 3;
 export default (gameDescription, generateGameData) => {
   let winsCount = 0;
 
+  console.log('Welcome to the Brain Games!');
+
   const userName = readlineSync.question('May I have your name? ');
 
-  console.log('Welcome to the Brain Games!');
   console.log(`Hello, ${userName}!`);
 
   console.log(gameDescription);
