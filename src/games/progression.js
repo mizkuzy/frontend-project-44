@@ -16,12 +16,12 @@ const generateSequenceElements = (firstElement, step, sequenceElementsNumber) =>
 };
 
 const generateGameData = () => {
-  const difference = getRandomInt(1, 10);
+  const sequenceStep = getRandomInt(1, 10);
   const firstElement = getRandomInt(0, 1000);
 
   const sequenceElements = generateSequenceElements(
     firstElement,
-    difference,
+    sequenceStep,
     SEQUENCE_ELEMENTS_NUMBER,
   );
 
